@@ -3,7 +3,7 @@ import random
 def main():
     print("This is a Number Guessing Game!")
     print("I am thinking of a number between 1 and 100, try and guess!")
-    random.randint(1, 100)
+    secret_number = random.randint(1, 100)
     attempts = 0
 
     while True:
@@ -16,7 +16,8 @@ def main():
 
         if user_guess < 1 or user_guess > 100:
             print("Number out of range. Your guess must be a number between 1 & 100.")
-        
+            continue
+
         if user_guess == secret_number:
             print(f"Congratulations! You guessed the correct number {secret_number}")
             break
